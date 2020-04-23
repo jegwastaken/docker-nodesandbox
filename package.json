@@ -1,0 +1,9 @@
+{
+  "name": "docker-nodesandbox",
+  "version": "0.0.1",
+  "main": "pm2.config.js",
+  "license": "MIT",
+  "dependencies": {
+    "redbird": "^0.10.0"
+  }
+}
