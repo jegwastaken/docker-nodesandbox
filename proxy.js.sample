@@ -1,7 +1,7 @@
 try {
     const proxy = require('redbird')({port: 80});
 
-    proxy.register(`${process.env.VIRTUAL_HOST}/hello`, 'localhost:4000');
+    proxy.register(`${process.env.VIRTUAL_HOST}`, 'localhost:4000');
 } catch (err) {
     if (err instanceof Error && err.code === 'MODULE_NOT_FOUND')
         console.log('No redbird, bitch!');
