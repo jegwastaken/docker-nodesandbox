@@ -30,7 +30,7 @@ version: '3.3'
 
 services:
   nodesandbox:
-    build: .
+    image: node:lts-alpine
     restart: unless-stopped
     container_name: ${container_name}
     volumes:
@@ -38,5 +38,9 @@ services:
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
-    command: /bin/sh -c "pm2-runtime pm2.config.js"${network}
+    command: /bin/sh -c "yarn global add pm2 && yarn && pm2-runtime pm2.config.js"${network}
 EOF
+
+cp .env.sample .env
+cp apps.js.sample apps.js
+cp proxy.js.sample proxy.js

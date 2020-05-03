@@ -1,6 +1,7 @@
 .env
 node_modules/
-apps/
+apps/*
+!apps/hello
 apps.js
 proxy.js
 docker-compose.yml
