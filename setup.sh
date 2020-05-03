@@ -38,5 +38,5 @@ services:
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
-    command: /bin/sh -c "yarn start"${network}
+    command: /bin/sh -c "pm2-runtime pm2.config.js"${network}
 EOF
