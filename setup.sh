@@ -33,12 +33,13 @@ services:
     image: node:lts-alpine
     restart: unless-stopped
     container_name: ${container_name}
+    working_dir: /sandbox
     volumes:
       - .:/sandbox
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
-    command: /bin/sh -c "yarn global add pm2 && yarn && pm2-runtime pm2.config.js"${network}
+    command: /bin/sh -c "yarn global add pm2 && yarn && pm2-runtime start pm2.config.js"${network}
 EOF
 
 cp -n apps.js.sample apps.js
