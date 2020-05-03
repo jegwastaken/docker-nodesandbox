@@ -1,0 +1,3 @@
+const proxy = require('redbird')({port: 80});
+
+proxy.register(`${process.env.VIRTUAL_HOST}/hello`, 'localhost:4000');
