@@ -41,6 +41,5 @@ services:
     command: /bin/sh -c "yarn global add pm2 && yarn && pm2-runtime pm2.config.js"${network}
 EOF
 
-cp .env.sample .env
-cp apps.js.sample apps.js
-cp proxy.js.sample proxy.js
+cp -n apps.js.sample apps.js
+cp -n proxy.js.sample proxy.js
