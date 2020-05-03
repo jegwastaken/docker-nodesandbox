@@ -3,3 +3,4 @@ node_modules/
 apps/
 apps.js
 proxy.js
+docker-compose.yml
