@@ -32,6 +32,7 @@ services:
   nodesandbox:
     image: node:lts-alpine
     restart: unless-stopped
+    expose: [80]
     container_name: ${container_name}
     working_dir: /sandbox
     volumes:
