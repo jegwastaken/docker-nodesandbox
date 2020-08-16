@@ -1,13 +1,16 @@
 var http = require('http');
-var url = require('url');
+var fs = require('fs');
 
 http.createServer(function (req, res) {
-    if(req.url === '/') {
-        res.write('Hello, Toronto!');
+    if(req.url === '/index.html' || req.url === '/') {
+        fs.readFile('./index.html', function(_err, data) {
+            res.end(data);
+        });
     } else {
         res.statusCode = 404;
-        res.write("I'm not just poor, son. I am destitute.");
-    }
 
-    res.end();
+        fs.readFile('./404.html', function(_err, data) {
+            res.end(data);
+        });
+    }
 }).listen(4000);
