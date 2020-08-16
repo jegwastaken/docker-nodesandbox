@@ -1,7 +1,13 @@
 var http = require('http');
+var url = require('url');
 
-http.createServer(function (_req, res) {
-    res.statusCode = 204;
-    res.write('Hello, Toronto!');
+http.createServer(function (req, res) {
+    if(req.url === '/') {
+        res.write('Hello, Toronto!');
+    } else {
+        res.statusCode = 404;
+        res.write("I'm not just poor, son. I am destitute.");
+    }
+
     res.end();
 }).listen(4000);
